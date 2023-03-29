@@ -6,7 +6,7 @@ from scipy.stats import norm
 #============================================================
 #the file is saved as an .npy file, use 'load' to access
 #============================================================
-data = np.load('model.npy')
+data = np.load('model(3maglower).npy')
 print("The data is: ", data)
 print("The data shape is: ", data.shape)
 
@@ -83,7 +83,7 @@ print("The min value of r is :", min(rdata))
 #============================================================
 print("Plotting a basic histogram for r, to see the counts")
 plt.hist(rdata,bins=100)
-plt.xlabel("Ri (bins)")
+plt.xlabel("Ri' (bins) [r' [units of: r/a]]")
 plt.ylabel("counts")
 plt.title("The histogram for rdata")
 plt.show()
@@ -171,8 +171,8 @@ print("the centers.shape :", centers.shape)
 #print("the centers type is :", type(centers))
 
 plt.plot(centers,pdf_r)
-plt.xlabel("Ri (bins)")
-plt.ylabel("pdf")
+plt.xlabel("Ri (bins)[r' [units of: r/a]]")
+plt.ylabel("pdf [per bin^3")
 plt.title("The 'manual' pdf for rdata")
 plt.show()
 
@@ -211,17 +211,14 @@ g = 1.0
 
 rho_r = rho(centers)
 
-
 plt.plot(centers,pdf_r,color='r',label="pdf")
 
 plt.plot(centers,rho_r,color='b',label="Hernquist density profile")
 
-
-
 plt.yscale("log")
 plt.xscale("log")
-plt.xlabel("log Ri")
-plt.ylabel("log pdf / rho ")
+plt.xlabel("log Ri' / log (r/a)")
+plt.ylabel("log (pdf or rho) ")
 plt.legend()
 plt.show()
 

@@ -6,7 +6,7 @@ from scipy.stats import norm
 #============================================================
 #the file is saved as an .npy file, use 'load' to access
 #============================================================
-data = np.load('model.npy')
+data = np.load('model(3maglower).npy')
 print("The data is: ", data)
 print("The data shape is: ", data.shape)
 
@@ -136,7 +136,7 @@ plt.legend()
 plt.title("The pdf for vx")
 plt.show()
 
-
+r = np.sqrt(x**2 + y**2 + z**2)
 
 print(" ")
 print("    *     Calculating the velocity dispersions  ") 
@@ -226,22 +226,6 @@ print(" ")
 #============================================================
 #============================================================
 
-# vrdata = np.sqrt(vx**2+vy**2+vz**2)
-
-
-
-
-
-#the theoretical <v_r^2> (radial velocity dispersion)
-
-# def v_r_d(r) :
-#     a = 1.
-#     factor =  (12.*r*((r+a)**3)/(a**4))*(np.log((r+a)/r)) - ((r/(r+a))*(25. + 52.0*(r/a) + 42.*((r/a)**2) + 12.*((r/a)**3)))
-#     return ((1./(12.*a))*factor)
-
-
-# #
-# vel_rad_disp = v_r_d(centers)
 
 
 
